@@ -8,9 +8,9 @@ const { status } = require("http-status");
 const parseXML = async (filePath) => {
   try {
     const xmlFile = fs.readFileSync(filePath, { encoding: "utf8", flag: "r" });
-    console.log(path.join(__dirname, "../../", filePath));
+    console.log(path.join(__dirname, "../../../", filePath));
     
-    fs.unlinkSync(path.join(__dirname, "../../", filePath)); // Clean up the uploaded file
+    fs.unlinkSync(path.join(__dirname, "../../../", filePath)); // Clean up the uploaded file
     const result = convert.xml2json(xmlFile, {
       compact: true,
       space: 4,
